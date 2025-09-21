@@ -1,3 +1,6 @@
+#let dark-george = true
+
+
 #import "template.typ": *
 #show: ATLAS-document.with(
   title: "TITLE",
@@ -6,20 +9,29 @@
   header-title: "HEADER-TITLE",
   icons-top: [],
   icons-bottom: [
-        #grid(
+    #grid(
       columns: 2,
       row-gutter: 10pt,
       column-gutter: 10pt,
       stroke: 0pt,
       inset: 10pt,
-      align: horizon+center,
-      image("assets/ENSSAT-logo.png", width: 200pt),
-      image("assets/NTNU-logo.png", width: 120pt)
-    )
+      align: horizon + center,
+    )[
+      #if (dark-george) {
+        image("assets/ENSSAT-logo/ENSSAT-logo-light.png", width: 200pt)
+      } else {
+        image("assets/ENSSAT-logo/ENSSAT-logo-dark.png", width: 200pt)
+      }
+    ][
+      #if (dark-george) {
+        image("assets/NTNU-logo/NTNU hovedlogo - hvit - bredde.svg", width: 120pt)
+      } else {
+        image("assets/NTNU-logo/NTNU hovedlogo - farger - bredde.svg", width: 120pt)
+      }
+    ]
   ],
-  header-logo: ATLAS-logo-full(),
-  header-logo-bis: ATLAS-logo-text(height: 20pt),
   funky-mode: false,
+  dark-mode: dark-george,
   debug: false,
 )
 
@@ -35,13 +47,19 @@
 #outline(indent: auto)
 #pagebreak()
 
-= Part 1 
-
+= Part 1
+#figure(caption: [ATLAS figure])[
+  #if (dark-george){
+    image("assets/ATLAS-logo/ATLAS-logo-full-light.svg",width: 60%)
+  } else {
+    image("assets/ATLAS-logo/ATLAS-logo-full-dark.svg",width: 60%)
+  }
+]
 == Part 1.1
 
 
 == Part 1.2
-#figure(image("assets/ATLAS-logo/ATLAS-logo-full.svg",width: 60%), caption: [ATLAS logo])
+
 
 
 #heading(numbering: none)[Conclusion]
@@ -49,5 +67,3 @@
 #lorem(200)
 
 #lorem(100)
-
-
