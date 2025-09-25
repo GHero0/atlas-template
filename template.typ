@@ -284,7 +284,7 @@
         )[
           #ATLAS-logo-full()
         ]
-        v(-.6cm)
+        v(-1.3cm)
       }
     ],
   )
@@ -295,9 +295,9 @@
 
   grid(
     columns: 1fr,
-    rows: (1fr, 1fr, 1fr, .5fr),
+    rows: (.3fr,1fr, .5fr, 1fr, .5fr),
     stroke: 1pt + ATLAS_debug,
-    align: center + horizon,
+    align: center + horizon,"",
     icons-top,
     block(
       stroke: 1pt + ATLAS_black.transparentize(50%),
