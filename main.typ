@@ -1,4 +1,4 @@
-#let dark-george = true
+#let dark-george = false
 
 
 #import "template.typ": *
